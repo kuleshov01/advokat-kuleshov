@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адвокат Кулешов А.И. | Юридическая помощь в Южно-Сахалинске</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+           CSS RESET & BASE STYLES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg-primary: #f8f7f5;
+            --color-bg-white: #ffffff;
+            --color-bg-dark: #1a1a1a;
+            --color-text-primary: #2c2c2c;
+            --color-text-secondary: #5a5a5a;
+            --color-text-muted: #808080;
+            --color-accent: #b8860b;
+            --color-accent-hover: #9a7209;
+            --color-border: #e0e0e0;
+            --font-sans: 'Roboto', 'PT Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'PT Serif', Georgia, serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================
+           TYPOGRAPHY SYSTEM
+           ============================================ */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .text-hero {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .text-h1 {
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.15;
+        }
+
+        .text-h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .text-h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .text-body {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+        }
+
+        .text-small {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .label-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            padding-bottom: 3px;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        /* ============================================
+           LAYOUT UTILITIES
+           ============================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-dark {
+            background-color: var(--color-bg-dark);
+            color: #ffffff;
+        }
+
+        .section-white {
+            background-color: var(--color-bg-white);
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(248, 247, 245, 0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            border-bottom-color: var(--color-border);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--color-text-primary);
+        }
+
+        .logo-mark {
+            width: 38px;
+            height: 38px;
+            background: var(--color-text-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            transition: background 0.3s ease;
+        }
+
+        .logo:hover .logo-mark {
+            background: var(--color-accent);
+        }
+
+        .logo-text {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.25rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-text-primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background: var(--color-text-primary);
+            color: white;
+            padding: 0.75rem 1.65rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-toggle span {
+            width: 22px;
+            height: 2px;
+            background: var(--color-text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 75px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero-label {
+            margin-bottom: 1.35rem;
+        }
+
+        .hero-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title em {
+            color: var(--color-accent);
+            font-style: normal;
+        }
+
+        .hero-desc {
+            margin-bottom: 2.25rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 1rem 2.1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--color-text-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-text-primary);
+            border: 1.5px solid var(--color-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-text-primary);
+            background: var(--color-text-primary);
+            color: white;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-stats-bar {
+            position: absolute;
+            bottom: -20px;
+            left: -15px;
+            right: 25px;
+            background: var(--color-bg-white);
+            padding: 1.75rem 2.25rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
+        .services-header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .services-header .label-tag {
+            margin-bottom: 0.9rem;
+        }
+
+        .services-header p {
+            margin-top: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--color-bg-white);
+            padding: 2.25rem;
+            border: 1px solid var(--color-border);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.35rem;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .service-title {
+            margin-bottom: 0.75rem;
+        }
+
+        .service-desc {
+            margin-bottom: 1.25rem;
+            font-size: 0.93rem;
+            line-height: 1.7;
+        }
+
+        .service-link {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.88rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: gap 0.3s ease;
+        }
+
+        .service-link:hover {
+            gap: 0.6rem;
+            color: var(--color-accent);
+        }
+
+        .arrow-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover .arrow-icon {
+            transform: translateX(3px);
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 42% 1fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+
+        .about-photo-wrap {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-photo {
+            width: 100%;
+            display: block;
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: 20px;
+            right: -18px;
+            background: var(--color-accent);
+            color: var(--color-bg-dark);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
+        }
+
+        .badge-number {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .badge-text {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.09em;
+            margin-top: 0.35rem;
+        }
+
+        .about-content .label-tag {
+            margin-bottom: 0.9rem;
+        }
+
+        .about-content > h2 {
+            margin-bottom: 1.35rem;
+        }
+
+        .about-content > p {
+            margin-bottom: 1.1rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+            margin-top: 1.75rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.78rem 1rem;
+            background: var(--color-bg-primary);
+        }
+
+        .feature-check {
+            width: 19px;
+            height: 19px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.62rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           ADVANTAGES SECTION
+           ============================================ */
+        .advantages-section {
+            background: var(--color-bg-dark);
+            color: white;
+        }
+
+        .advantages-header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .advantages-header .label-tag {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .advantages-header p {
+            margin-top: 1.1rem;
+            color: rgba(255, 255, 255, 0.68);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+        }
+
+        .advantage-card {
+            padding: 2.25rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .advantage-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--color-accent);
+            transform: translateY(-5px);
+        }
+
+        .advantage-icon {
+            width: 46px;
+            height: 46px;
+            background: rgba(184, 134, 11, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.15rem;
+        }
+
+        .advantage-title {
+            font-size: 1.08rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .advantage-desc {
+            font-size: 0.91rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+           ============================================ */
+        .testimonials-header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .testimonials-header .label-tag {
+            margin-bottom: 0.9rem;
+        }
+
+        .testimonials-header p {
+            margin-top: 1.1rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+        }
+
+        .testimonial-card {
+            background: var(--color-bg-primary);
+            padding: 2.25rem;
+            border-left: 3px solid var(--color-accent);
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateX(6px);
+            box-shadow: -6px 0 28px rgba(184, 134, 11, 0.1);
+        }
+
+        .testimonial-quote-mark {
+            font-family: var(--font-serif);
+            font-size: 3.25rem;
+            line-height: 1;
+            color: var(--color-accent);
+            opacity: 0.25;
+            margin-bottom: 0.85rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            background: var(--color-text-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--color-text-primary);
+        }
+
+        .author-info {
+            font-size: 0.82rem;
+            color: var(--color-text-muted);
+        }
+
+        /* ============================================
+           PRICING SECTION
+           ============================================ */
+        .pricing-section {
+            background: var(--color-bg-white);
+        }
+
+        .pricing-header {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .pricing-header .label-tag {
+            margin-bottom: 0.9rem;
+        }
+
+        .pricing-table {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--color-bg-white);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+        }
+
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid var(--color-border);
+            transition: background 0.3s ease;
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-row:hover {
+            background: var(--color-bg-primary);
+        }
+
+        .pricing-service {
+            font-weight: 500;
+            color: var(--color-text-primary);
+        }
+
+        .pricing-price {
+            font-weight: 700;
+            color: var(--color-accent);
+            text-align: right;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            font-style: italic;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact-section {
+            background: var(--color-bg-dark);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 4.5rem;
+        }
+
+        .contact-info .label-tag {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            margin-bottom: 0.9rem;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 1.1rem;
+        }
+
+        .contact-info > p {
+            color: rgba(255, 255, 255, 0.62);
+            margin-bottom: 2.25rem;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.15rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.15rem 1.35rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--color-accent);
+        }
+
+        .contact-item-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item-label {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.48);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 0.22rem;
+        }
+
+        .contact-item-value {
+            color: white;
+            font-weight: 500;
+            line-height: 1.55;
+        }
+
+        .contact-form-wrap {
+            background: var(--color-bg-white);
+            padding: 3rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.15rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.45rem;
+            color: var(--color-text-primary);
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 0.88rem 1.05rem;
+            border: 1.5px solid var(--color-border);
+            background: var(--color-bg-primary);
+            font-family: inherit;
+            font-size: 0.92rem;
+            color: var(--color-text-primary);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--color-text-muted);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235a5a5a' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1.1rem 2rem;
+            background: var(--color-text-primary);
+            color: white;
+            border: none;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .btn-submit:hover {
+            background: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.3);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--color-bg-dark);
+            color: rgba(255, 255, 255, 0.62);
+            padding: 4.5rem 0 2.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .footer-brand .logo {
+            color: white;
+            margin-bottom: 1.1rem;
+        }
+
+        .footer-brand .logo-mark {
+            background: var(--color-accent);
+        }
+
+        .footer-desc {
+            font-size: 0.91rem;
+            line-height: 1.72;
+            margin-bottom: 1.35rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.7rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-bg-dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 0.84rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 1.35rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.73rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.52);
+            text-decoration: none;
+            font-size: 0.91rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 0.78rem;
+            margin-bottom: 1.05rem;
+            font-size: 0.91rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.38);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                gap: 3rem;
+            }
+
+            .hero-stats-bar {
+                left: 0;
+                right: 0;
+            }
+
+            .services-grid,
+            .advantages-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 4.5rem 0;
+            }
+
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 75px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2.25rem 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                order: -1;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .hero-stats-bar {
+                position: static;
+                margin-top: 1.75rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-badge {
+                right: 18px;
+                bottom: 18px;
+            }
+
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .advantages-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .contact-form-wrap {
+                padding: 2.25rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <div class="logo-mark">К</div>
+                <span class="logo-text">Кулешов А.И.</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Главная</a></li>
+                <li><a href="#services" class="nav-link">Услуги</a></li>
+                <li><a href="#about" class="nav-link">Обо мне</a></li>
+                <li><a href="#testimonials" class="nav-link">Отзывы</a></li>
+                <li><a href="#contact" class="nav-link">Контакты</a></li>
+                <li><a href="#contact" class="btn-nav">Консультация</a></li>
+            </ul>
+
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero section" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-label">
+                        <span class="label-tag">Адвокат | Рег. номер 65/286</span>
+                    </div>
+
+                    <h1 class="hero-title text-hero">
+                        Защита ваших прав<br>в <em>Южно-Сахалинске</em>
+                    </h1>
+
+                    <p class="hero-desc text-body">
+                        Профессиональная юридическая помощь по всей Сахалинской области. 
+                        Более 12 лет практики, 244 выигранных дела. Индивидуальный подход 
+                        к каждому клиенту.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            Записаться на консультацию
+                            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                        <a href="#services" class="btn btn-outline">Услуги</a>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <img src="https://qc4n.bigmodel.cn/imageXvsH_searched_original.png?UCloudPublicKey=TOKEN_3f4277c6-f8d6-41a9-968b-dbfa0994d483&Expires=1807744174&Signature=ljRLRBqRuHFPz9bPTwonSDpvNgY%3D" 
+                         alt="Кулешов Александр Иванович - адвокат в Южно-Сахалинске" 
+                         class="hero-photo">
+                    
+                    <div class="hero-stats-bar">
+                        <div class="stat-item">
+                            <div class="stat-number">12+</div>
+                            <div class="stat-label">Лет опыта</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">244</div>
+                            <div class="stat-label">Дела выиграно</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.6</div>
+                            <div class="stat-label">Рейтинг</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services section section-white" id="services">
+        <div class="container">
+            <div class="services-header">
+                <span class="label-tag">Практика</span>
+                <h2 class="text-h1">Направления юридической помощи</h2>
+                <p class="text-body">
+                    Полный спектр услуг для физических и юридических лиц на территории Сахалинской области
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3 class="service-title text-h3">Уголовные дела</h3>
+                    <p class="service-desc">
+                        Защита на всех стадиях уголовного судопроизводства — от досудебного следствия до апелляции и кассации
+                    </p>
+                    <a href="#contact" class="service-link">
+                        Подробнее 
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="service-title text-h3">Семейные споры</h3>
+                    <p class="service-desc">
+                        Разводы, раздел имущества, алименты, определение места жительства детей, лишение родительских прав
+                    </p>
+                    <a href="#contact" class="service-link">
+                        Подробнее 
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <h3 class="service-title text-h3">Гражданские споры</h3>
+                    <p class="service-desc">
+                        Договорные споры, взыскание долгов, защита прав потребителей, жилищные вопросы, наследство
+                    </p>
+                    <a href="#contact" class="service-link">
+                        Подробнее 
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3 class="service-title text-h3">Дел по ДТП</h3>
+                    <p class="service-desc">
+                        Обжалование постановлений ГИБДД, страховые споры, возврат прав, возмещение ущерба
+                    </p>
+                    <a href="#contact" class="service-link">
+                        Подробнее 
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <h3 class="service-title text-h3">Недвижимость</h3>
+                    <p class="service-desc">
+                        Сделки с недвижимостью, земельные споры, eviction дела, оформление прав собственности
+                    </p>
+                    <a href="#contact" class="service-link">
+                        Подробнее 
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3 class="service-title text-h3">Документальная работа</h3>
+                    <p class="service-desc">
+                        Составление исков, договоров, претензий. Правовой анализ документов, консультации
+                    </p>
+                    <a href="#contact" class="service-link">
+                        Подробнее 
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-photo-wrap">
+                    <img src="https://qc4n.bigmodel.cn/imageXvsH_searched_original.png?UCloudPublicKey=TOKEN_3f4277c6-f8d6-41a9-968b-dbfa0994d483&Expires=1807744174&Signature=ljRLRBqRuHFPz9bPTwonSDpvNgY%3D" 
+                         alt="Кулешов Александр Иванович - адвокат" 
+                         class="about-photo">
+                    <div class="experience-badge">
+                        <div class="badge-number">12+</div>
+                        <div class="badge-text">лет практики</div>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <span class="label-tag">Обо мне</span>
+                    <h2 class="text-h1">Кулешов Александр Иванович</h2>
+                    
+                    <p class="text-body">
+                        Адвокат с более чем 12-летним опытом ведения дел в судах общей юрисдикции. 
+                        Зарегистрирован в реестре адвокатов Сахалинской области под номером 65/286. 
+                        Специализируюсь на уголовных, гражданских и административных делах.
+                    </p>
+                    
+                    <p class="text-body">
+                        Работаю на территории всей Сахалинской области: Южно-Сахалинск, Холмск, 
+                        Корсаков, Невельск и другие населенные пункты. Готов выехать к клиенту 
+                        для первичной консультации.
+                    </p>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-check">&#10003;</div>
+                            <span class="feature-text">Член коллегии адвокатов</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">&#10003;</div>
+                            <span class="feature-text">Рег. номер 65/286</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">&#10003;</div>
+                            <span class="feature-text">244 судебных дела</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">&#10003;</div>
+                            <span class="feature-text">Работа по всей области</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">&#10003;</div>
+                            <span class="feature-text">Первая консультация от 2500 руб.</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">&#10003;</div>
+                            <span class="feature-text">Полная конфиденциальность</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVANTAGES SECTION -->
+    <section class="advantages section advantages-section" id="advantages">
+        <div class="container">
+            <div class="advantages-header">
+                <span class="label-tag">Преимущества</span>
+                <h2 class="text-h1" style="color:white;">Почему выбирают меня</h2>
+                <p class="text-body">
+                    Гарантирую профессиональный подход и максимальную эффективность в защите ваших интересов
+                </p>
+            </div>
+
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    </div>
+                    <h3 class="advantage-title">Индивидуальный подход</h3>
+                    <p class="advantage-desc">
+                        Разрабатываю уникальную стратегию защиты для каждого клиента с учетом всех особенностей дела
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <h3 class="advantage-title">Конфиденциальность</h3>
+                    <p class="advantage-desc">
+                        Соблюдаю адвокатскую тайну. Все сведения о клиенте и деле остаются строго конфиденциальными
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="advantage-title">Оперативность</h3>
+                    <p class="advantage-desc">
+                        Быстрое реагирование на обращения, своевременная подготовка процессуальных документов
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="advantage-title">Прозрачные цены</h3>
+                    <p class="advantage-desc">
+                        Четкое ценообразование без скрытых платежей. Стоимость соответствует рекомендациям Адвокатской палаты
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3 class="advantage-title">Работа по всей области</h3>
+                    <p class="advantage-desc">
+                        Выезд на консультацию в любой населенный пункт Сахалинской области. Удаленное консультирование
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h3 class="advantage-title">Постоянная связь</h3>
+                    <p class="advantage-desc">
+                        На связи для клиентов. Оперативная связь через телефон и мессенджеры в рабочее время
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials section section-white" id="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <span class="label-tag">Отзывы клиентов</span>
+                <h2 class="text-h1">Что говорят клиенты</h2>
+                <p class="text-body">
+                    Реальные отзывы людей, которым я помог защитить их права и интересы
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        Хочу выразить огромную благодарность Александру Ивановичу за профессионализм, ответственность и блестящий результат в суде! К нам, как к предпринимателям, необоснованно подали иск за якобы испорченную обувь в процессе химчистки. Ситуация была напряженной, но Александр Иванович справился блестяще.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">АБ</div>
+                        <div>
+                            <div class="author-name">Александр Бондарев</div>
+                            <div class="author-info">Гражданский спор</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        Александр Иванович занимался двумя моими делами в мировом суде, и в обоих случаях результат был положительным. Он настоящий профессионал, с ним приятно иметь дело. Рекомендую его.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">СМ</div>
+                        <div>
+                            <div class="author-name">Семен</div>
+                            <div class="author-info">Гражданские дела</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        Александр Иванович долго и кропотливо вел наше дело. Преодолевая бюрократические препоны довел его до логического конца. За это ему огромная благодарность.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ЕП</div>
+                        <div>
+                            <div class="author-name">Елена Полякова</div>
+                            <div class="author-info">Наследственный спор</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        Александр Иванович вел мои дела с положительным результатом, к своим обязанностям относится ответственно и профессионально. Всегда готов объяснить и проконсультировать по любому вопросу. Рекомендую данного специалиста.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ОК</div>
+                        <div>
+                            <div class="author-name">Олег К.</div>
+                            <div class="author-info">Административное дело</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        Александр Иванович мастер своего дела. Знает все тонкости и нюансы ведения дел. Советую обращаться к нему за помощью.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ДМ</div>
+                        <div>
+                            <div class="author-name">Дмитрий</div>
+                            <div class="author-info">Уголовное дело</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-mark">&ldquo;</div>
+                    <p class="testimonial-text">
+                        Классный адвокат. Всегда внимательно относится к нуждам клиентов. Не дает пустых обещаний. Держит слово. Очень доволен результатом работы.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">НК</div>
+                        <div>
+                            <div class="author-name">Наталья Кулешова</div>
+                            <div class="author-info">Семейный спор</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing section pricing-section" id="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <span class="label-tag">Стоимость услуг</span>
+                <h2 class="text-h1">Прозрачные цены</h2>
+                <p class="text-body">
+                    Стоимость соответствует рекомендациям Адвокатской палаты Сахалинской области
+                </p>
+            </div>
+
+            <div class="pricing-table">
+                <div class="pricing-row">
+                    <div class="pricing-service">Устная консультация</div>
+                    <div class="pricing-price">от 2 500 руб.</div>
+                </div>
+                <div class="pricing-row">
+                    <div class="pricing-service">Письменная консультация</div>
+                    <div class="pricing-price">от 6 000 руб.</div>
+                </div>
+                <div class="pricing-row">
+                    <div class="pricing-service">Составление документов</div>
+                    <div class="pricing-price">от 15 000 руб.</div>
+                </div>
+                <div class="pricing-row">
+                    <div class="pricing-service">Ознакомление с материалами дела</div>
+                    <div class="pricing-price">от 4 000 руб.</div>
+                </div>
+                <div class="pricing-row">
+                    <div class="pricing-service">Ведение административного дела</div>
+                    <div class="pricing-price">от 15 000 руб.</div>
+                </div>
+                <div class="pricing-row">
+                    <div class="pricing-service">Представительство в суде (1 день)</div>
+                    <div class="pricing-price">от 10 000 руб.</div>
+                </div>
+            </div>
+
+            <p class="pricing-note">
+                * Точная стоимость определяется после ознакомления с материалами дела. Первая устная консультация — 30 минут бесплатно.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="label-tag">Контакты</span>
+                    <h2 class="text-h1" style="color:white;">Свяжитесь со мной</h2>
+                    <p class="text-body">
+                        Первая консультация — бесплатно. Заполните форму или свяжитесь удобным способом.
+                    </p>
+
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <div class="contact-item-label">Телефон</div>
+                                <div class="contact-item-value">+7 (4242) XX-XX-XX<br>+7 XXX XXX-XX-XX</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div>
+                                <div class="contact-item-label">Email</div>
+                                <div class="contact-item-value">advokat-kuleshov@mail.ru</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <div class="contact-item-label">Адрес офиса</div>
+                                <div class="contact-item-value">г. Южно-Сахалинск,<br>проспект Мира, д. 113, оф. 2</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <div>
+                                <div class="contact-item-label">Режим работы</div>
+                                <div class="contact-item-value">Пн-Пт: 9:00 — 18:00<br>Сб: по предварительной записи</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrap">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Ваше имя *</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Как к вам обращаться?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Тип услуги</label>
+                            <select id="service" name="service" class="form-select">
+                                <option value="">Выберите категорию...</option>
+                                <option value="criminal">Уголовное дело</option>
+                                <option value="family">Семейный спор</option>
+                                <option value="civil">Гражданский спор</option>
+                                <option value="auto">Дело по ДТП</option>
+                                <option value="admin">Административное дело</option>
+                                <option value="property">Недвижимость</option>
+                                <option value="documents">Документы / Консультация</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Опишите вашу ситуацию *</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Кратко опишите вашу проблему или вопрос..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-mark">К</div>
+                        <span class="logo-text">Кулешов А.И.</span>
+                    </a>
+                    <p class="footer-desc">
+                        Профессиональная юридическая помощь на Сахалине. 
+                        Адвокатская деятельность с 2012 года.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Telegram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" title="WhatsApp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" title="ВКонтакте">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.863-.525-2.049-1.649-1.033-1.001-1.49-1.135-1.744-1.135-.359 0-.461.102-.461.639v1.42c0 .455-.145.729-1.346.729-1.99 0-4.196-1.205-5.746-3.451C4.395 10.95 3.725 9.11 3.725 8.626c0-.254.101-.492.61-.492h1.744c.228 0 .38.102.535.492.606 1.74 1.624 3.267 2.048 3.267.203 0 .297-.102.297-.7V9.71c-.066-1.282-.746-1.383-.746-1.88 0-.204-.165-.408-.409-.408H5.782c-.178 0-.358.132-.358.408 0 .426.635 2.54 2.96 4.348 1.928 1.5 3.566 1.966 4.308 1.966.254 0 .383-.026.383-.278v-1.6c0-.203.102-.408.41-.408h1.744c.19 0 .383.077.383.408v2.56c0 .331-.017.492.279.492.114 0 .26-.026.434-.102.721-.369 1.39-1.039 1.903-1.797.297-.458.152-.714.025-.903-.114-.178-.279-.279-.446-.381-.114-.077-.279-.178-.433-.279-.721-.459-1.133-.714-1.256-1.064-.076-.203-.025-.304.153-.304h1.744c.254 0 .358.115.486.365.586 1.346 1.58 2.68 1.953 2.68.178 0 .267-.051.267-.503v-2.32c0-.714.152-.866.548-.866.319 0 .864.076 2.143 1.395 1.46 1.46 1.703 1.649 2.008 1.649h1.744c.254 0 .383-.115.31-.492-.089-.525-.89-1.447-1.81-2.469-.504-.579-1.269-1.202-1.5-1.459-.229-.228-.165-.33 0-.533.001-.001 2.195-3.069 2.37-4.112.058-.305.003-.53-.216-.53z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Услуги</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Уголовные дела</a></li>
+                        <li><a href="#services">Семейные споры</a></li>
+                        <li><a href="#services">Гражданские дела</a></li>
+                        <li><a href="#services">Дела по ДТП</a></li>
+                        <li><a href="#services">Недвижимость</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">Обо мне</a></li>
+                        <li><a href="#testimonials">Отзывы</a></li>
+                        <li><a href="#pricing">Цены</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+7 (4242) XX-XX-XX</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>advokat-kuleshov@mail.ru</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Южно-Сахалинск, пр. Мира, 113</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2024 Адвокат Кулешов А.И. Все права защищены. | Рег. номер 65/286
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = this.querySelector('#name').value.trim();
+            const phone = this.querySelector('#phone').value.trim();
+            const message = this.querySelector('#message').value.trim();
+
+            if (!name || !phone || !message) {
+                alert('Пожалуйста, заполните обязательные поля');
+                return;
+            }
+
+            alert('Спасибо за обращение! Адвокат Кулешов А.И. свяжется с вами в ближайшее время.');
+            this.reset();
+        });
+
+        // Phone input mask
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = !x[2] ? x[1] : '+7 (' + x[2] + ')' + (x[3] ? ' ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
